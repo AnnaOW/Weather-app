@@ -148,3 +148,8 @@ footer {
   padding: 40px;
   display: block;
 }
+
+.github-link {
+  color: #fff;
+  text-decoration: underline;
+}
