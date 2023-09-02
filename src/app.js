@@ -103,7 +103,7 @@ button.addEventListener("click", handleTheCity);
 let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", getCurrentLocation);
 
-searchCity("Brussels");
+searchCity("Venice");
 
 //function convertToFahrenheit(event) {
 //  event.preventDefault();
