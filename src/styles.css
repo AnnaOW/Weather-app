@@ -94,8 +94,13 @@ footer {
 .current-temperature h5 {
   font-size: 4em;
 }
+
 .current-temperature h6 {
   font-size: 25px;
+}
+
+.next-days-forecast {
+  margin-top: 60px;
 }
 
 .card {
@@ -120,11 +125,6 @@ footer {
   color: #00adb5;
   font-size: 30px;
   margin: 10px;
-}
-
-.next-days-forecast {
-  position: relative;
-  bottom: 200px;
 }
 
 .weather-app {
