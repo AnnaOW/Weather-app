@@ -21,10 +21,6 @@ h1 {
   padding-bottom: 0;
 }
 
-h3 {
-  font-size: 40px;
-}
-
 h4 {
   color: #3a4750;
   font-family: "Rowdies", cursive;
@@ -95,8 +91,8 @@ footer {
   top: -300px;
   left: 780px;
 }
-.current-temperature h3 {
-  font-size: 50px;
+.current-temperature h5 {
+  font-size: 4em;
 }
 .current-temperature h6 {
   font-size: 25px;
