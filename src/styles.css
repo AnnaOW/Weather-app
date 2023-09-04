@@ -74,11 +74,9 @@ footer {
   width: 250px;
 }
 
-#current-weather-picture {
-  color: #00adb5;
+.weather-picture {
   float: left;
-  font-size: 100px;
-  height: 160px;
+  height: 200px;
   padding: 20px;
   width: 180px;
 }

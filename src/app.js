@@ -61,6 +61,12 @@ function showWeatherConditions(response) {
   let windSpeed = Math.round(response.data.wind.speed);
   let windSpeedElement = document.querySelector("#wind-speed");
   windSpeedElement.innerHTML = windSpeed;
+  let weatherIconElement = document.querySelector("#current-weather-icon");
+  weatherIconElement.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+  );
+  weatherIconElement.setAttribute("alt", response.data.condition.description);
 }
 
 function searchCity(city) {
