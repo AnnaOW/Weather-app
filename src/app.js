@@ -95,11 +95,6 @@ function handlePosition(position) {
   axios.get(apiUrl).then(showWeatherConditions);
 }
 
-// function getCurrentLocation(event) {
-// event.preventDefault();
-// navigator.geolocation.getCurrentPosition(handlePosition);
-// }
-
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#tempereture-now");
@@ -122,9 +117,6 @@ form.addEventListener("submit", handleTheCity);
 
 let button = document.querySelector("#city-name-button");
 button.addEventListener("click", handleTheCity);
-
-// let locationButton = document.querySelector("#location-button");
-// locationButton.addEventListener("click", getCurrentLocation);
 
 let celsiusTemp = null;
 
