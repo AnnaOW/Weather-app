@@ -86,15 +86,6 @@ function handleTheCity(event) {
   searchCity(city);
 }
 
-function handlePosition(position) {
-  let apiKey = "9a4cbff04f4e654ca4teaa03bc88aoaf";
-  let latitude = position.coords.latitude;
-  let longitude = position.coords.longitude;
-  let units = "metric";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=${units}`;
-  axios.get(apiUrl).then(showWeatherConditions);
-}
-
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#tempereture-now");
