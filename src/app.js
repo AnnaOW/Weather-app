@@ -49,9 +49,10 @@ function showWeatherConditions(response) {
   let cityName = response.data.city;
   let cityNameElement = document.querySelector("#city-name");
   cityNameElement.innerHTML = cityName;
-  let Temperature = Math.round(response.data.temperature.current);
-  let TemperatureElement = document.querySelector("#tempereture-now");
-  TemperatureElement.textContent = Temperature;
+  celsiusTemp = response.data.temperature.current;
+  let temperature = Math.round(celsiusTemp);
+  let temperatureElement = document.querySelector("#tempereture-now");
+  temperatureElement.textContent = temperature;
   let weatherDesciption = response.data.condition.description;
   let weatherDesciptionElement = document.querySelector("#weather-description");
   weatherDesciptionElement.innerHTML = weatherDesciption;
@@ -99,6 +100,19 @@ function handlePosition(position) {
 // navigator.geolocation.getCurrentPosition(handlePosition);
 // }
 
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#tempereture-now");
+  let fahrenheitTemperature = (celsiusTemp * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function convertToCelcius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#tempereture-now");
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+}
+
 let currentDate = document.querySelector("#currentDate");
 let today = new Date();
 currentDate.innerHTML = formatDate(today);
@@ -112,22 +126,12 @@ button.addEventListener("click", handleTheCity);
 // let locationButton = document.querySelector("#location-button");
 // locationButton.addEventListener("click", getCurrentLocation);
 
-searchCity("Venice");
-
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let celsiusTemperature = document.querySelector("#tempereture-now");
-  celsiusTemperature.textContent = "18°";
-}
-
-let celsiusTemperature = document.querySelector("#celsius-link");
-celsiusTemperature.addEventListener("click", convertToFahrenheit);
-
-function convertToCelcius(event) {
-  event.preventDefault();
-  let fahrenheitTemperature = document.querySelector("#tempereture-now");
-  fahrenheitTemperature.textContent = "66°";
-}
+let celsiusTemp = null;
 
 let fahrenheitTemperature = document.querySelector("#fahrenheit-link");
-fahrenheitTemperature.addEventListener("click", convertToCelcius);
+fahrenheitTemperature.addEventListener("click", convertToFahrenheit);
+
+let celsiusTemperature = document.querySelector("#celsius-link");
+celsiusTemperature.addEventListener("click", convertToCelcius);
+
+searchCity("Venice");
