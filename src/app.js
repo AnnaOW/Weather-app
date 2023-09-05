@@ -114,20 +114,20 @@ button.addEventListener("click", handleTheCity);
 
 searchCity("Venice");
 
-//function convertToFahrenheit(event) {
-//  event.preventDefault();
-//  let celsiusTemperature = document.querySelector("#tempereture-now");
-//  celsiusTemperature.textContent = "18°";
-//}
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let celsiusTemperature = document.querySelector("#tempereture-now");
+  celsiusTemperature.textContent = "18°";
+}
 
-//let celsiusTemperature = document.querySelector("#celsius-link");
-//celsiusTemperature.addEventListener("click", convertToFahrenheit);
+let celsiusTemperature = document.querySelector("#celsius-link");
+celsiusTemperature.addEventListener("click", convertToFahrenheit);
 
-//function convertToCelcius(event) {
-//  event.preventDefault();
-//  let fahrenheitTemperature = document.querySelector("#tempereture-now");
-//  fahrenheitTemperature.textContent = "66°";
-//}
+function convertToCelcius(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = document.querySelector("#tempereture-now");
+  fahrenheitTemperature.textContent = "66°";
+}
 
-//let fahrenheitTemperature = document.querySelector("#fahrenheit-link");
-//fahrenheitTemperature.addEventListener("click", convertToCelcius)
+let fahrenheitTemperature = document.querySelector("#fahrenheit-link");
+fahrenheitTemperature.addEventListener("click", convertToCelcius);
