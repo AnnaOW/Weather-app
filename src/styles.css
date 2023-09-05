@@ -52,11 +52,11 @@ footer {
   bottom: -5px;
 }
 
-.current-location-button {
-  margin-left: 30px;
-  position: relative;
-  bottom: -5px;
-}
+/* .current-location-button { */
+/* margin-left: 30px; */
+/* position: relative; */
+/* bottom: -5px; */
+/* } */
 
 .current-weather-summary {
   border: 2px solid #3a4750;
@@ -90,12 +90,14 @@ footer {
   top: -300px;
   left: 780px;
 }
+
 .current-temperature h5 {
-  font-size: 4em;
+  font-size: 6em;
 }
 
 .current-temperature h6 {
-  font-size: 25px;
+  font-size: 30px;
+  margin-left: 10px;
 }
 
 .next-days-forecast {

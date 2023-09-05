@@ -94,10 +94,10 @@ function handlePosition(position) {
   axios.get(apiUrl).then(showWeatherConditions);
 }
 
-function getCurrentLocation(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(handlePosition);
-}
+// function getCurrentLocation(event) {
+// event.preventDefault();
+// navigator.geolocation.getCurrentPosition(handlePosition);
+// }
 
 let currentDate = document.querySelector("#currentDate");
 let today = new Date();
@@ -109,8 +109,8 @@ form.addEventListener("submit", handleTheCity);
 let button = document.querySelector("#city-name-button");
 button.addEventListener("click", handleTheCity);
 
-let locationButton = document.querySelector("#location-button");
-locationButton.addEventListener("click", getCurrentLocation);
+// let locationButton = document.querySelector("#location-button");
+// locationButton.addEventListener("click", getCurrentLocation);
 
 searchCity("Venice");
 
