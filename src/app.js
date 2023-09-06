@@ -91,12 +91,16 @@ function convertToFahrenheit(event) {
   let temperatureElement = document.querySelector("#tempereture-now");
   let fahrenheitTemperature = (celsiusTemp * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  temperatureElement.classList.remove("active");
+  celsiusTemperature.classList.add("active");
 }
 
 function convertToCelcius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#tempereture-now");
   temperatureElement.innerHTML = Math.round(celsiusTemp);
+  fahrenheitTemperature.classList.add("active");
+  temperatureElement.classList.remove("active");
 }
 
 let currentDate = document.querySelector("#currentDate");
