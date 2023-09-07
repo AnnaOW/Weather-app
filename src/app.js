@@ -89,18 +89,18 @@ function handleTheCity(event) {
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#tempereture-now");
-  let fahrenheitTemperature = (celsiusTemp * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-  temperatureElement.classList.remove("active");
-  celsiusTemperature.classList.add("active");
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+  celsiusTemperature.classList.remove("active");
+  fahrenheitTemperature.classList.add("active");
 }
 
 function convertToCelcius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#tempereture-now");
   temperatureElement.innerHTML = Math.round(celsiusTemp);
-  fahrenheitTemperature.classList.add("active");
-  temperatureElement.classList.remove("active");
+  celsiusTemperature.classList.add("active");
+  fahrenheitTemperature.classList.remove("active");
 }
 
 let currentDate = document.querySelector("#currentDate");
