@@ -107,25 +107,25 @@ footer {
   margin-top: 60px;
 }
 
-.card {
+.next-days-forecast .card {
   background-color: #d6d6d6;
   text-align: center;
 }
 
-.card-title {
+.next-days-forecast .card-title {
   font-size: 25px;
 }
 
-.card-text {
+.next-days-forecast .card-text {
   font-size: 20px;
 }
 
-.card-title,
+.next-days-forecast .card-title,
 .card-text {
   color: #3a4750;
 }
 
-.next-day-weather-picture {
+.next-days-forecast .next-day-weather-picture {
   color: #00adb5;
   font-size: 30px;
   margin: 10px;
