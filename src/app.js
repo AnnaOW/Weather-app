@@ -56,15 +56,17 @@ function displayForecast() {
       forecastHTML +
       `
       <div class="col-2">
+      <div class = "next-days-forecast-card">
         <div class="weather-forecast-date">${day}</div>
-        <img
+        <img class = "next-day-weather-picture"
           src="http://openweathermap.org/img/wn/50d@2x.png"
           alt=""
-          width="42"
+          width="45"
         />
         <div class="weather-forecast-temperatures">
           <span class="weather-forecast-temperature-max"> 18° | </span>
           <span class="weather-forecast-temperature-min"> 12° </span>
+        </div>
         </div>
       </div>
   `;
