@@ -64,7 +64,7 @@ function displayForecast(response) {
         `
       <div class="col">
       <div class = "next-days-forecast-card">
-        <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+        <div class="weather-forecast-date">${formatDay(forecastDay.time)}</div>
         <img class = "next-day-weather-picture"
           src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
             forecastDay.condition.icon
@@ -73,10 +73,10 @@ function displayForecast(response) {
           width="45"
         />
         <div class="weather-forecast-temperatures">
-          <span class="weather-forecast-temperature-max"><strong>${Match.round(
+          <span class="weather-forecast-temperature-max"><strong>${Math.round(
             forecastDay.temperature.maximum
           )}°</strong> | </span>
-          <span class="weather-forecast-temperature-min">${Match.round(
+          <span class="weather-forecast-temperature-min">${Math.round(
             forecastDay.temperature.minimum
           )}°</span>
         </div>
@@ -113,6 +113,8 @@ function showWeatherConditions(response) {
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   weatherIconElement.setAttribute("alt", response.data.condition.description);
+
+  handleTheForecast(response.data.coordinates);
 }
 
 function handleTheForecast(coordinates) {
@@ -174,5 +176,3 @@ let celsiusTemperature = document.querySelector("#celsius-link");
 celsiusTemperature.addEventListener("click", convertToCelcius);
 
 searchCity("Verona");
-
-displayForecast();
