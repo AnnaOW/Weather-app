@@ -15,7 +15,7 @@ body {
 
 h1 {
   color: #3a4750;
-  font-family: "Pacifico", cursive;
+  font-family: "Rowdies", cursive;
   padding: 20px;
   padding-bottom: 0;
 }
@@ -94,8 +94,8 @@ footer {
 }
 
 .current-temperature h6 {
-  font-size: 30px;
-  margin-left: 10px;
+  font-size: 25px;
+  margin-left: 15px;
 }
 
 .current-temperature h6,
