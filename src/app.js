@@ -46,26 +46,31 @@ function formatDate(date) {
 }
 
 function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
-
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `
       <div class="col">
       <div class = "next-days-forecast-card">
-        <div class="weather-forecast-date">${day}</div>
+        <div class="weather-forecast-date">${forecastDay.dt}</div>
         <img class = "next-day-weather-picture"
-          src="http://openweathermap.org/img/wn/50d@2x.png"
+          src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+            forecastDay.condition.icon
+          }.png"
           alt=""
           width="45"
         />
         <div class="weather-forecast-temperatures">
-          <span class="weather-forecast-temperature-max"> 18° | </span>
-          <span class="weather-forecast-temperature-min"> 12° </span>
+          <span class="weather-forecast-temperature-max"><strong>${Match.round(
+            forecastDay.temperature.maximum
+          )}°</strong> | </span>
+          <span class="weather-forecast-temperature-min">${Match.round(
+            forecastDay.temperature.minimum
+          )}°</span>
         </div>
         </div>
       </div>
@@ -101,10 +106,10 @@ function showWeatherConditions(response) {
   weatherIconElement.setAttribute("alt", response.data.condition.description);
 }
 
-function handleTheForecast(city) {
+function handleTheForecast(coordinates) {
   let apiKey = "9a4cbff04f4e654ca4teaa03bc88aoaf";
   let units = "metric";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayForecast);
 }
 
