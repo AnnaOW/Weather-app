@@ -45,7 +45,7 @@ function formatDate(date) {
   return `${day}, ${todayDate} ${month} ${year}, ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
@@ -99,6 +99,13 @@ function showWeatherConditions(response) {
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   weatherIconElement.setAttribute("alt", response.data.condition.description);
+}
+
+function handleTheForecast(city) {
+  let apiKey = "9a4cbff04f4e654ca4teaa03bc88aoaf";
+  let units = "metric";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function searchCity(city) {
