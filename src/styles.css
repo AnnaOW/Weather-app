@@ -112,7 +112,7 @@ footer {
 .next-days-forecast {
   border-width: 10px;
   display: block;
-  margin: 10px auto;
+  margin: 0 auto;
   padding: 20px;
 }
 
