@@ -55,7 +55,7 @@ function displayForecast() {
     forecastHTML =
       forecastHTML +
       `
-      <div class="col-2">
+      <div class="col">
       <div class = "next-days-forecast-card">
         <div class="weather-forecast-date">${day}</div>
         <img class = "next-day-weather-picture"
@@ -152,6 +152,6 @@ fahrenheitTemperature.addEventListener("click", convertToFahrenheit);
 let celsiusTemperature = document.querySelector("#celsius-link");
 celsiusTemperature.addEventListener("click", convertToCelcius);
 
-searchCity("Venice");
+searchCity("Verona");
 
 displayForecast();
