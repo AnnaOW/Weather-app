@@ -97,9 +97,9 @@ function showWeatherConditions(response) {
   celsiusTemp = response.data.temperature.current;
   let temperature = Math.round(celsiusTemp);
   let temperatureElement = document.querySelector("#tempereture-now");
-  temperatureElement.textContent = temperature;
   fahrenheitTemperature.classList.remove("active");
   celsiusTemperature.classList.add("active");
+  temperatureElement.textContent = temperature;
   let weatherDesciption = response.data.condition.description;
   let weatherDesciptionElement = document.querySelector("#weather-description");
   weatherDesciptionElement.innerHTML = weatherDesciption;
