@@ -98,6 +98,8 @@ function showWeatherConditions(response) {
   let temperature = Math.round(celsiusTemp);
   let temperatureElement = document.querySelector("#tempereture-now");
   temperatureElement.textContent = temperature;
+  fahrenheitTemperature.classList.remove("active");
+  celsiusTemperature.classList.add("active");
   let weatherDesciption = response.data.condition.description;
   let weatherDesciptionElement = document.querySelector("#weather-description");
   weatherDesciptionElement.innerHTML = weatherDesciption;
